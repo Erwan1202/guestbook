@@ -1,0 +1,97 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.main-nav ul, .auth-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul li, .auth-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a, .auth-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.auth-nav ul li button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.auth-nav ul li button a {
+    color: white;
+    text-decoration: none;
+}
+
+.auth-nav ul li button:hover {
+    background-color: #45a049;
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.main-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.main-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.main-content button a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
