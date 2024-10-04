@@ -19,14 +19,14 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="guestbook.php">GuestBook</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="php/guestbook.php">GuestBook</a></li>
+                    <li><a href="php/contact.php">Contact</a></li>
                 </ul>
             </nav>
             <nav class="auth-nav">
                 <ul>
-                    <button><a href="connexion.php">Connexion</a></button>
-                    <button><a href="inscription.php">Inscription</a></button>
+                    <button><a href="php/connexion.php">Connexion</a></button>
+                    <button><a href="php/inscription.php">Inscription</a></button>
                 </ul>
             </nav>
         </header>
@@ -37,7 +37,7 @@
                 <p>Vous pouvez laisser un message sur notre livre d'or.</p>
 
             
-                <button><a href="guestbook.php">Accéder au GuestBook</a></button>
+                <button><a href="php/guestbook.php">Accéder au GuestBook</a></button>
                 
 
             </section>
