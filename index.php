@@ -13,33 +13,20 @@
 </head>
 
 <body>
-    <div x-data="{ log: $persist(false) }">
+    <div x-data="{}">
         <header class="header">
             <h1>GuestBook</h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <template x-if="log">
-                        <!-- Le lien vers le GuestBook est disponible uniquement si l'utilisateur est connecté -->
-                        <li><a href="guestbook.php">GuestBook</a></li>
-                    </template>
+                    <li><a href="guestbook.php">GuestBook</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
             <nav class="auth-nav">
                 <ul>
-                    <!-- Affiche les boutons de Connexion/Inscription seulement si l'utilisateur n'est pas connecté -->
-                    <template x-if="!log">
-                        <li><button><a href="connexion.php">Connexion</a></button></li>
-                    </template>
-                    <template x-if="!log">
-                        <li><button><a href="inscription.php">Inscription</a></button></li>
-                    </template>
-
-                    <!-- Si l'utilisateur est connecté, afficher un bouton Déconnexion -->
-                    <template x-if="log">
-                        <li><button @click="log = false">Déconnexion</button></li>
-                    </template>
+                    <button><a href="connexion.php">Connexion</a></button>
+                    <button><a href="inscription.php">Inscription</a></button>
                 </ul>
             </nav>
         </header>
@@ -49,20 +36,15 @@
                 <h2>Bienvenue sur notre livre d'or</h2>
                 <p>Vous pouvez laisser un message sur notre livre d'or.</p>
 
-                <!-- Si l'utilisateur est connecté, afficher le bouton pour accéder au GuestBook -->
-                <template x-if="log">
-                    <button><a href="guestbook.php">Accéder au GuestBook</a></button>
-                </template>
+            
+                <button><a href="guestbook.php">Accéder au GuestBook</a></button>
+                
 
-                <!-- Si l'utilisateur n'est pas connecté, proposer de se connecter pour accéder au GuestBook -->
-                <template x-if="!log">
-                    <p>Veuillez <a href="connexion.php">vous connecter</a> pour accéder au GuestBook.</p>
-                </template>
             </section>
         </main>
     
         <footer>
-            <p>© 2024 GuestBook - Tous droits réservés.</p>
+            <p>© 2024 GuestBook </p>
         </footer>
     </div>
 </body>
