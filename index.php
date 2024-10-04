@@ -25,8 +25,8 @@
             </nav>
             <nav class="auth-nav">
                 <ul>
-                    <button><a href="php/connexion.php">Connexion</a></button>
-                    <button><a href="php/inscription.php">Inscription</a></button>
+                    <li><a href="php/connexion.php" class="btn">Connexion</a></li>
+                    <li><a href="php/inscription.php" class="btn">Inscription</a></li>
                 </ul>
             </nav>
         </header>
@@ -36,10 +36,7 @@
                 <h2>Bienvenue sur notre livre d'or</h2>
                 <p>Vous pouvez laisser un message sur notre livre d'or.</p>
 
-            
-                <button><a href="php/guestbook.php">Accéder au GuestBook</a></button>
-                
-
+                <a href="php/guestbook.php" class="btn">Accéder au GuestBook</a>
             </section>
         </main>
     
