@@ -11,28 +11,42 @@
 <body>
     <?php
     session_start();
+    include '../php/db_connect.php'; // Inclure le fichier de connexion à la base de données
 
     $error_message = '';
-
-    // Simulation d'une base de données utilisateurs (utiliser une vraie base dans un projet réel)
-    $users = [
-        'user1' => 'password1',
-        'user2' => 'password2'
-    ];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
 
-        // Vérification des informations de connexion
-        if (isset($users[$username]) && $users[$username] === $password) {
-            $_SESSION['username'] = $username;
-            header('Location: ../php/guestbook.php');
-            exit;
+        // Requête pour vérifier l'utilisateur dans la base de données
+        $sql = "SELECT password FROM users WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->store_result();
+        
+        if ($stmt->num_rows > 0) {
+            // Si l'utilisateur existe, on récupère le mot de passe haché
+            $stmt->bind_result($hashed_password);
+            $stmt->fetch();
+
+            // Vérifier le mot de passe
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['username'] = $username;
+                header('Location: ../php/guestbook.php');
+                exit;
+            } else {
+                $error_message = 'Nom d’utilisateur ou mot de passe incorrect.';
+            }
         } else {
             $error_message = 'Nom d’utilisateur ou mot de passe incorrect.';
         }
+
+        $stmt->close();
     }
+
+    $conn->close(); // Fermer la connexion
     ?>
 
     <div x-data="loginForm()" class="login-container">
@@ -97,3 +111,4 @@
     </script>
 </body>
 </html>
+
